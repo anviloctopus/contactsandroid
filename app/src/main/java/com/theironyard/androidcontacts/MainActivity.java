@@ -17,11 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     ListView list;
     Button addButton;
-    EditText text;
-
-
-
-
+    EditText name;
+    EditText phone;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         list = (ListView) findViewById(R.id.ListView);
-        text = (EditText) findViewById(R.id.editText);
+        phone = (EditText) findViewById(R.id.editText);
+        name = (EditText) findViewById(R.id.editText2);
         addButton = (Button) findViewById(R.id.button);
 
         items = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
@@ -43,14 +41,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        String item = text.getText().toString();
-        items.add(item);
-        text.setText("");
+        String phoneNumber = phone.getText().toString();
+        String contactName = name.getText().toString();
+        items.add(contactName +"\t(" + phoneNumber + ")");
+        phone.setText("");
+        name.setText("");
 
     }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        return false;
+        String contact = items.getItem(position);
+        items.remove(contact);
+        return true;
     }
 }

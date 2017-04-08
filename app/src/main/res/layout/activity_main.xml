@@ -11,46 +11,56 @@
     tools:context="com.theironyard.androidcontacts.MainActivity">
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="431dp"
+        android:weightSum="1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:inputType="textPersonName"
-            android:text="Name"
-            android:ems="10"
-            android:id="@+id/editText2"
-            android:layout_weight="0.95" />
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:id="@+id/ListView"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="187dp"
+            android:layout_weight="0.67" />
 
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:inputType="textPersonName"
-            android:text="Phone#"
-            android:ems="10"
-            android:id="@+id/editText"
-            android:layout_weight="1" />
-
-        <Button
-            android:text="ADD"
-            android:layout_width="59dp"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button" />
-    </LinearLayout>
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ListView"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="187dp" />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editText2"
+                android:layout_weight="0.95"
+                android:hint="Name" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:layout_weight="1"
+                android:hint="Phone#" />
+
+            <Button
+                android:text="ADD"
+                android:layout_width="59dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/button" />
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>
